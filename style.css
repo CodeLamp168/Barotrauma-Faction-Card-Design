@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Barlow";
+  background: black;
+}
+
+.card-wrap {
+  display: grid;
+  place-content: center;
+  grid-auto-flow: row;
+  min-height: 100vh;
+  gap: 5em;
+  justify-content: space-evenly;
+  padding: 2vmin;
+}
+@media (max-width: 1800px) {
+  .card-wrap {
+    grid-auto-flow: row;
+  }
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.card section {
+  height: 450px;
+  background-color: black;
+  transition: left 300ms ease, right 300ms ease, transform 300ms ease-in-out, width 300ms ease-in-out;
+}
+.card section h2 {
+  font-size: 30px;
+}
+.card section button {
+  text-transform: uppercase;
+  border: 1px solid white;
+  font-size: 13px;
+  transition: transform 300ms ease-in-out;
+  transform: scale(1.01);
+}
+.card section button:hover {
+  transform: scale(1.05);
+}
+.card .card-display {
+  width: 350px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 3;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.card .card-display.not-active:hover {
+  transform: scale(1.05);
+}
+.card .card-display img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.card .card-display h3 {
+  padding: 1vmin;
+}
+.card .card-info {
+  position: absolute;
+  top: 0px;
+  padding: 2vmin 2vmin 2em 4vmin;
+  width: 250px;
+  left: 0;
+  z-index: -1;
+  overflow-x: scroll;
+  transform: translateX(0px);
+}
+.card .card-info h2, .card .card-info h3, .card .card-info button {
+  margin-top: 2vmin;
+  white-space: wrap;
+}
+.card .card-info button {
+  width: auto;
+  padding: 1.5vmin 2vmin;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+[data-faction=jovian] section h2 {
+  background: linear-gradient(120deg, #f1eeda 50%, rgba(211, 157, 134, 0.9529411765));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+[data-faction=jovian] section h3, [data-faction=jovian] section button {
+  background: linear-gradient(100deg, #bbb79b 70%, #8d3611);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+[data-faction=jovian] .card-display {
+  box-shadow: 0px 0px 5px 5px rgba(133, 130, 110, 0.4039215686);
+}
+[data-faction=jovian] .card-info {
+  box-shadow: 0px 0px 5px 5px rgba(133, 130, 110, 0.1647058824);
+}
+
+[data-faction=coalition] section h2 {
+  background: linear-gradient(95deg, #dae8f1 20%, rgb(155, 187, 228));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+[data-faction=coalition] section h3, [data-faction=coalition] section button {
+  background: linear-gradient(95deg, #b2f0f0 20%, rgb(97, 145, 209));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+[data-faction=coalition] .card-display {
+  box-shadow: 0px 0px 5px 5px rgba(84, 130, 190, 0.315);
+}
+[data-faction=coalition] .card-info {
+  box-shadow: 0px 0px 5px 5px rgba(84, 130, 190, 0.151);
+}
+
+[data-faction=outcasts] section h2 {
+  background: linear-gradient(95deg, #dae8f1 20%, #FF8299);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+[data-faction=outcasts] section h3, [data-faction=outcasts] section button {
+  background: linear-gradient(90deg, #fcd0d8 20%, #99b8f1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+[data-faction=outcasts] .card-display {
+  box-shadow: 0px 0px 5px 5px rgba(170, 62, 71, 0.337254902);
+}
+[data-faction=outcasts] .card-info {
+  box-shadow: 0px 0px 5px 5px rgba(170, 62, 71, 0.1647058824);
+}/*# sourceMappingURL=style.css.map */
